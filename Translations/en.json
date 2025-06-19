@@ -14,5 +14,11 @@
             "stop": "Stop"
         }
     },
-    "modules": {}
+    "modules": {
+        "core": {
+            "config": {
+                "title": "Config"
+            }
+        }
+    }
 }

@@ -1,18 +1,16 @@
-﻿using System;
-using Dalamud.Game.ClientState.Conditions;
+﻿using System.Numerics;
 using Dalamud.Plugin;
 using ECommons;
 using ECommons.DalamudServices;
-using ECommons.Reflection;
 using Ocelot;
 using Ocelot.Chain;
+using Ocelot.IPC;
 
 namespace ThatsAWall;
 
 public sealed class Plugin : OcelotPlugin
 {
-    public override string Name
-    {
+    public override string Name {
         get => "ThatsAWall";
     }
 
@@ -33,6 +31,11 @@ public sealed class Plugin : OcelotPlugin
         OcelotInitialize();
 
         ChainManager.Initialize();
+
+        Svc.Framework.RunOnTick(() => {
+            var vnav = ipc.GetProvider<VNavmesh>();
+            vnav.MoveToPath([new Vector3(814f, 72f, -679f)], false);
+        });
     }
 
 

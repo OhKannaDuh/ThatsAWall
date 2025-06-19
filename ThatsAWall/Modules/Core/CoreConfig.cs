@@ -3,7 +3,7 @@ using Ocelot.Modules;
 
 namespace ThatsAWall.Modules.Core;
 
-[Title("Core Config")]
+[Title("modules.core.config.title")]
 public class CoreConfig : ModuleConfig
 {
     [Checkbox]
