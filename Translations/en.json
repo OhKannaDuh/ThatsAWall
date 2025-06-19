@@ -1,10 +1,10 @@
 {
     "windows": {
         "main": {
-            "title": "PluginTemplate"
+            "title": "ThatsAWall"
         },
         "config": {
-            "title": "PluginTemplate Config"
+            "title": "ThatsAWall Config"
         }
     },
     "generic": {

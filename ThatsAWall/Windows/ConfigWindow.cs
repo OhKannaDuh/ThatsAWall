@@ -1,6 +1,6 @@
 ﻿using Ocelot.Windows;
 
-namespace PluginTemplate.Windows;
+namespace ThatsAWall.Windows;
 
 [OcelotConfigWindow]
 public class ConfigWindow : OcelotConfigWindow

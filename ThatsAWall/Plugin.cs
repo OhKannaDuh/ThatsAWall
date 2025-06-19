@@ -7,20 +7,20 @@ using ECommons.Reflection;
 using Ocelot;
 using Ocelot.Chain;
 
-namespace PluginTemplate;
+namespace ThatsAWall;
 
 public sealed class Plugin : OcelotPlugin
 {
     public override string Name
     {
-        get => "PluginTemplate";
+        get => "ThatsAWall";
     }
 
     public Config config { get; init; }
 
     public override IOcelotConfig _config => config;
 
-    public static ChainQueue Chain => ChainManager.Get("PluginTemplate##main");
+    public static ChainQueue Chain => ChainManager.Get("ThatsAWall##main");
 
     public Plugin(IDalamudPluginInterface plugin)
         : base(plugin, Module.DalamudReflector)

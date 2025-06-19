@@ -1,6 +1,6 @@
 using Ocelot;
 
-namespace PluginTemplate.Modules.{{name}};
+namespace ThatsAWall.Modules.{{name}};
 
 public class Panel
 {

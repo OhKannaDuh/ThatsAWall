@@ -1,6 +1,6 @@
 .vs/
-PluginTemplate/obj/
-PluginTemplate/bin/
+ThatsAWall/obj/
+ThatsAWall/bin/
 *.user
-PluginTemplate/.env
+ThatsAWall/.env
 node_modules/
