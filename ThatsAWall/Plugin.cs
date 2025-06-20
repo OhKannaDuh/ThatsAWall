@@ -1,17 +1,14 @@
-﻿using System.Numerics;
-using Dalamud.Plugin;
+﻿using Dalamud.Plugin;
 using ECommons;
-using ECommons.DalamudServices;
 using Ocelot;
 using Ocelot.Chain;
-using Ocelot.IPC;
 
 namespace ThatsAWall;
 
 public sealed class Plugin : OcelotPlugin
 {
     public override string Name {
-        get => "ThatsAWall";
+        get => "That's A Wall";
     }
 
     public Config config { get; init; }
@@ -31,11 +28,6 @@ public sealed class Plugin : OcelotPlugin
         OcelotInitialize();
 
         ChainManager.Initialize();
-
-        Svc.Framework.RunOnTick(() => {
-            var vnav = ipc.GetProvider<VNavmesh>();
-            vnav.MoveToPath([new Vector3(814f, 72f, -679f)], false);
-        });
     }
 
 
