@@ -1,8 +1,6 @@
-
 using System.Numerics;
 using Dalamud.Plugin.Services;
 using ECommons.Automation.NeoTaskManager;
-using ECommons.DalamudServices;
 using ECommons.GameHelpers;
 using ECommons.Throttlers;
 using Ocelot.Chain;
@@ -18,13 +16,22 @@ public class CoreModule : Module<Plugin, Config>
         get => _config.CoreConfig;
     }
 
+    public bool IsPaused = false;
+
+    public override bool enabled => config.Enabled && !IsPaused;
+
+    private IpcProvider ipcProvider;
+
     public CoreModule(Plugin plugin, Config config)
-        : base(plugin, config) { }
+        : base(plugin, config)
+    {
+        ipcProvider = new(this);
+    }
 
     public override void Tick(IFramework _)
     {
         // Check config is enabled and we have vnav installed and ready
-        if (!config.Enabled || !TryGetIPCProvider<VNavmesh>(out var vnav) || vnav == null)
+        if (!enabled || !TryGetIPCProvider<VNavmesh>(out var vnav) || vnav == null)
         {
             return;
         }

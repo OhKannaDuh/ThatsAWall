@@ -1,3 +1,4 @@
+using ECommons.EzIpcManager;
 using Ocelot.Config.Attributes;
 using Ocelot.Modules;
 
